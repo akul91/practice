@@ -16,28 +16,29 @@ public class SLLMain {
 		System.out.println("5.Delete Middle");
 		System.out.println("6.Delete Last");
 		System.out.println("7.Print");
-		System.out.println("8.Exit");
+		System.out.println("8.Reverse");
+		System.out.println("9.Exit");
 
-		while (true) {
-
-			Scanner scannerObject = new Scanner(System.in);
-			System.out.println("Enter Choice:");
+		Scanner scannerObject = new Scanner(System.in);
+		boolean flag = true;
+		while (flag) {
+			System.out.print("Enter Choice:");
 			int ch = scannerObject.nextInt();
 			switch (ch) {
 			case 1:
-				System.out.println("Enter number to add:");
+				System.out.print("Enter number to add:");
 				num = new SingleLinkedList(scannerObject.nextInt());
 				head = opr.addFirst(num, head);
 				break;
 			case 2:
-				System.out.println("Enter number to add:");
+				System.out.print("Enter number to add:");
 				num = new SingleLinkedList(scannerObject.nextInt());
 				System.out.println("Enter number before:");
 				int prev = scannerObject.nextInt();
 				head = opr.addMiddle(num, prev, head);
 				break;
 			case 3:
-				System.out.println("Enter number to add:");
+				System.out.print("Enter number to add:");
 				num = new SingleLinkedList(scannerObject.nextInt());
 				opr.addLast(num, head);
 				break;
@@ -45,7 +46,7 @@ public class SLLMain {
 				head = opr.deleteFirst(head);
 				break;
 			case 5:
-				System.out.println("Enter number to delete:");
+				System.out.print("Enter number to delete:");
 				int num1 = scannerObject.nextInt();
 				opr.deleteMiddle(num1, head);
 				break;
@@ -55,11 +56,14 @@ public class SLLMain {
 			case 7:
 				opr.traverse(head);
 				break;
+			case 8:
+				opr.reverse(head);
+				break;
 			default:
-				System.exit(0);
+				flag = false;
 				break;
 			}
-			scannerObject.close();
 		}
+		scannerObject.close();
 	}
 }

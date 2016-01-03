@@ -83,4 +83,19 @@ public class SLLOperations {
 		return head;
 	}
 
+	public void reverse(SingleLinkedList head) {
+		SingleLinkedList temp = null, rev = null;
+		while (head != null) {
+			rev = new SingleLinkedList(head.getData());
+			rev.setNext(temp);
+			temp = rev;
+			head = head.getNext();
+		}
+		while (rev != null) {
+			System.out.print(rev.getData() + " ");
+			rev = rev.getNext();
+		}
+
+	}
+
 }

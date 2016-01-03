@@ -1,4 +1,4 @@
-package com.basics;
+package basic;
 
 public class MinMax {
 
