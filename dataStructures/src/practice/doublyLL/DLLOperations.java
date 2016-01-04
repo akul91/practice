@@ -88,4 +88,26 @@ public class DLLOperations {
 		}
 		return head;
 	}
+
+	public void reverse(DoublyLinkedList head) {
+		System.out.print("Reversed List is:");
+		if (head == null);	
+		else if(head.getNext() == null)
+			System.out.print(head.getData());
+		else {
+			DoublyLinkedList temp = null;
+			while (head != null) {
+				temp = head.getPrev();
+				head.setPrev(head.getNext());
+				head.setNext(temp);
+				head = head.getPrev();
+			}
+			temp = temp.getPrev();
+			while (temp != null) {
+				System.out.print(temp.getData() + " ");
+				temp = temp.getNext();
+			}
+		}
+		System.out.println();
+	}
 }

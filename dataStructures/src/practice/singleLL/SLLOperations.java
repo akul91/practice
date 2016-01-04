@@ -95,7 +95,5 @@ public class SLLOperations {
 			System.out.print(rev.getData() + " ");
 			rev = rev.getNext();
 		}
-
 	}
-
 }

@@ -16,11 +16,12 @@ public class DLLMain {
 		System.out.println("5.Delete Middle");
 		System.out.println("6.Delete Last");
 		System.out.println("7.Print");
-		System.out.println("8.Exit");
+		System.out.println("8.Reverse");
+		System.out.println("9.Exit");
 
-		while (true) {
-
-			Scanner scannerObject = new Scanner(System.in);
+		Scanner scannerObject = new Scanner(System.in);
+		boolean flag = true;
+		while (flag) {
 			System.out.println("Enter Choice:");
 			int ch = scannerObject.nextInt();
 			switch (ch) {
@@ -55,12 +56,15 @@ public class DLLMain {
 			case 7:
 				opr.traverse(head);
 				break;
+			case 8:
+				opr.reverse(head);
+				break;
 			default:
-				System.exit(0);
+				flag = false;
 				break;
 			}
-			scannerObject.close();
 		}
+		scannerObject.close();
 	}
 
 }
