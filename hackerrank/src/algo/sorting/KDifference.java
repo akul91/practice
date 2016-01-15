@@ -27,7 +27,7 @@ public class KDifference {
 			for (int j = i + 1; j < a.length; j++) {
 				if (a[j] - a[i] == k)
 					++count;
-				// Breaking if difference more than required difference
+				// Breaking if difference is more than the required difference
 				else if (a[j] - a[i] > k)
 					break;
 			}
