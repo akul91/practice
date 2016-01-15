@@ -1,7 +1,5 @@
 package basic;
 
-import java.util.Arrays;
-
 public class TwoMins {
 
 	static int[] arr = new int[2]; // 0 is min, 1 is secondmin
@@ -22,12 +20,6 @@ public class TwoMins {
 
 		arr = twoMins(a, 0, a.length - 1);
 		System.out.println("\n" + arr[0] + " " + arr[1]);
-
-		Arrays.sort(a);
-
-		for (int i = 0; i < a.length; i++) {
-			System.out.print(a[i] + " ");
-		}
 
 	}
 
