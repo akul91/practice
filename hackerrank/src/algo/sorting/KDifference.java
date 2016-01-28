@@ -14,11 +14,11 @@ public class KDifference {
 			a[index] = in.nextInt();
 		}
 		int k = in.nextInt();
-		System.out.print(KDifference(a, k));
+		System.out.print(kDifference(a, k));
 		in.close();
 	}
 
-	static int KDifference(int[] a, int k) {
+	static int kDifference(int[] a, int k) {
 		// Sorting the array in O(nlogn) time
 		Arrays.sort(a);
 		int count = 0;

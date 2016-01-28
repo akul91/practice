@@ -9,7 +9,6 @@ public class CountingSort3 {
 		int grid[] = new int[100];
 		for (int input = 0; input < n; input++) {
 			int val = in.nextInt();
-			String str=in.next();
 			grid[val] += 1;
 		}
 		int count=0;
