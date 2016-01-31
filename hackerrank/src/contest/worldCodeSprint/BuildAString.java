@@ -28,6 +28,11 @@ public class BuildAString {
 							int len = 1;
 							// System.out.println(s + " " + len);
 							for (int l = j + 1; l < n; l++) {
+								/*
+								 * if (output.length() > s + len)
+								 * System.out.println(output.charAt(s + len) +
+								 * " " + str.charAt(l));
+								 */
 								if (output.length() > s + len && output.charAt(s + len) == str.charAt(l)) {
 									++len;
 								} else {
@@ -41,14 +46,16 @@ public class BuildAString {
 								end = s + len;
 							}
 						}
+						int temp = j;
 						j += maxLen - 1;
 						// System.out.println(output);
 						// System.out.println(start + " " + end);
-						if (end - start > 1) {
+						if ((end - start) * a > b) {
 							output.append(str.substring(start, end));
 							// System.out.println(output);
 							cost += b;
 						} else {
+							j = temp;
 							output.append(str.charAt(j));
 							cost += a;
 						}
@@ -57,7 +64,7 @@ public class BuildAString {
 						cost += a;
 					}
 				}
-				//System.out.println(j + " " + cost);
+				// System.out.println(j + 1 + " " + cost);
 			}
 			System.out.println(cost);
 		}
