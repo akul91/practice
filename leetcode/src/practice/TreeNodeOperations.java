@@ -27,11 +27,26 @@ public class TreeNodeOperations {
 						temp.right = node;
 						break;
 					} else {
-						queue.add(temp.left);
-						queue.add(temp.right);
+						if (temp.left.val != Integer.MIN_VALUE)
+							queue.add(temp.left);
+						if (temp.right.val != Integer.MIN_VALUE)
+							queue.add(temp.right);
 					}
 				}
 			}
+		}
+		queue = new LinkedList<TreeNode>();
+		queue.add(root);
+		while (!queue.isEmpty()) {
+			TreeNode temp = queue.poll();
+			if (temp.left != null && temp.left.val == Integer.MIN_VALUE)
+				temp.left = null;
+			if (temp.right != null && temp.right.val == Integer.MIN_VALUE)
+				temp.right = null;
+			if (temp.right != null)
+				queue.add(temp.right);
+			if (temp.left != null)
+				queue.add(temp.left);
 		}
 		return root;
 	}
